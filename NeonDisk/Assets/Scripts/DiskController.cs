@@ -116,7 +116,7 @@ public class DiskController : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-        if (transform.position != StartPos && Vector3.Distance(Camera.main.transform.position, transform.position) > 3)
+        else if (transform.position != StartPos && Vector3.Distance(Camera.main.transform.position, transform.position) > 3)
         {
             if (_throwTime == 0)
             {
@@ -135,6 +135,8 @@ public class DiskController : MonoBehaviour
                 transform.position = StartPos;
             }
         }
+        else if (_throwTime > 0)
+            _throwTime = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
