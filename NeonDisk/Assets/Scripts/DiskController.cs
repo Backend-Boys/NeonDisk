@@ -97,12 +97,11 @@ public class DiskController : MonoBehaviour
     [Tooltip("Amount of times the disk can bounce off other objects | 0 = infinite bounces")]
     int maxBounces = 0;
 
-    private void Start()
+    void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         StartPos = transform.position;
     }
-
 
     void Update()
     {
@@ -116,7 +115,7 @@ public class DiskController : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-        else if (transform.position != StartPos && Vector3.Distance(Camera.main.transform.position, transform.position) > 3)
+        else if (transform.position != StartPos && Vector3.Distance(StartPos, transform.position) > 1)
         {
             if (_throwTime == 0)
             {
@@ -170,18 +169,26 @@ public class DiskController : MonoBehaviour
     public void LockConstraints()
     {
         Rigidbody body = GetComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.None;
+
+        Vector3 rot = transform.eulerAngles;
+
         if (rotationConstraints.x == true)
         {
-            body.constraints = RigidbodyConstraints.FreezeRotationX;
+            body.constraints |= RigidbodyConstraints.FreezeRotationX;
+            rot.x = 0;
         }
         if (rotationConstraints.y == true)
         {
-            body.constraints = RigidbodyConstraints.FreezeRotationY;
+            body.constraints |= RigidbodyConstraints.FreezeRotationY;
+            rot.y = 0;
         }
         if (rotationConstraints.z == true)
         {
-            body.constraints = RigidbodyConstraints.FreezeRotationZ;
+            body.constraints |= RigidbodyConstraints.FreezeRotationZ;
+            rot.z = 0;
         }
 
+        transform.eulerAngles = rot;
     }
 }
