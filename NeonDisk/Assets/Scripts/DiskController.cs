@@ -10,7 +10,7 @@ using UnityEngine;
 [SelectionBase]
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody))]
-[AddComponentMenu("NeonDisk/Disk Controller")]
+[AddComponentMenu("XR/Disk Controller")]
 public class DiskController : MonoBehaviour
 {
 
@@ -22,21 +22,7 @@ public class DiskController : MonoBehaviour
     private Rigidbody rb = null;
     private float _throwTime = 0;
     private bool m_isStuck = false;
-
-    public bool IsStuck
-    {
-        get => m_isStuck;
-        set => m_isStuck = value;
-    }
-
     private int m_countedBounces = 0;
-
-    public int CountedBounces
-    {
-        get => m_countedBounces;
-        set => m_countedBounces = value;
-    }
-
 
     [System.Serializable]
     public struct rb_constraints
@@ -111,15 +97,6 @@ public class DiskController : MonoBehaviour
     [Tooltip("Amount of times the disk can bounce off other objects | 0 = infinite bounces")]
     int maxBounces = 0;
 
-    private void Reset()
-    {
-        m_countedBounces = 0;
-        this.transform.position = StartPos;
-        rb.velocity = Vector3.zero;
-        m_isStuck = false;
-    }
-
-
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -128,18 +105,18 @@ public class DiskController : MonoBehaviour
 
     void Update()
     {
-        if(maxBounces != 0 && m_countedBounces >= maxBounces)
+        if(maxBounces != 0 && m_countedBounces > maxBounces)
         {
-            Reset();
+            transform.position = StartPos;
+            rb.velocity = Vector3.zero;
         }
 
-        
+        if (m_isStuck == true)
+        {
+            rb.isKinematic = true;
+        }
         else if (transform.position != StartPos && Vector3.Distance(StartPos, transform.position) > 1)
         {
-            if (m_isStuck == true)
-            {
-                rb.isKinematic = true;
-            }
             if (_throwTime == 0)
             {
                 _throwTime = Time.realtimeSinceStartup + 10;
@@ -151,11 +128,10 @@ public class DiskController : MonoBehaviour
                 {
                     rb.velocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
-                    
                 }
 
                 _throwTime = 0;
-                Reset();
+                transform.position = StartPos;
             }
         }
         else if (_throwTime > 0)
@@ -164,24 +140,26 @@ public class DiskController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if(collision.gameObject.CompareTag("Wall"))
+        if(collision.gameObject.CompareTag("Bouncabble"))
         {
-            collision.gameObject.GetComponent<WallSystem>().RunFunction(this);
+            m_countedBounces +=1;
         }
-        if (collision.gameObject.CompareTag("NPC"))
+        if(collision.gameObject.CompareTag("NonBounce"))
         {
-            collision.gameObject.GetComponent<NPC>().RunFunction(this);
+            m_isStuck = true;
         }
 
     }
 
-    public void Unstuck()
+    public void DiskStuck()
+    {
+        rb.isKinematic = true;
+    }
+    public void DiskUnstuck()
     {
         rb.isKinematic = false;
-        m_isStuck = false;
     }
- 
+
     public void UnlockConstraints()
     {
         Rigidbody body = GetComponent<Rigidbody>();
@@ -208,7 +186,7 @@ public class DiskController : MonoBehaviour
         if (rotationConstraints.z == true)
         {
             body.constraints |= RigidbodyConstraints.FreezeRotationZ;
-           rot.z = 0;
+            rot.z = 0;
         }
 
         transform.eulerAngles = rot;

@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandAnimator : MonoBehaviour
 {
+    public InputActionReference point;
+
     private ActionBasedController _controller;
     private Animator _handAnimator;
 
     private bool _grabbing;
+    private bool _pointing;
 
     void Start()
     {
@@ -18,9 +22,27 @@ public class HandAnimator : MonoBehaviour
     void LateUpdate()
     {
         _grabbing = _controller.selectAction.action.ReadValue<float>() > 0.5f;
+        _pointing = point.action.ReadValue<float>() > 0.5f;
 
         if (_handAnimator != null)
-            _handAnimator.SetBool("Grab", _grabbing);
+        {
+            if (_grabbing)
+            {
+                _handAnimator.SetBool("Grab", true);
+                _handAnimator.SetBool("Point", false);
+            }
+            else if (_pointing)
+            {
+                _handAnimator.SetBool("Grab", false);
+                _handAnimator.SetBool("Point", true);
+            }
+            else
+            {
+                _handAnimator.SetBool("Grab", false);
+                _handAnimator.SetBool("Point", false);
+            }
+
+        }
         else
             _handAnimator = _controller.modelTransform.GetComponentInChildren<Animator>();
     }
