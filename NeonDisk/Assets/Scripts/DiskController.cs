@@ -15,7 +15,8 @@ public class DiskController : MonoBehaviour
 {
 
     [ContextMenu("Help")]
-    void Help(){
+    void Help()
+    {
         Debug.Log("todo : add link to local html file that shows how to use this module");
     }
 
@@ -95,7 +96,7 @@ public class DiskController : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Curve Smoothing for 'Cork-Screw effect'")]
-    [Range(0,10)]
+    [Range(0, 10)]
     float curveSmoothing;
 
     /// <summary> 
@@ -111,7 +112,7 @@ public class DiskController : MonoBehaviour
     [Tooltip("Amount of times the disk can bounce off other objects | 0 = infinite bounces")]
     int maxBounces = 0;
 
-    private void Reset()
+    public void Reset()
     {
         m_countedBounces = 0;
         this.transform.position = StartPos;
@@ -128,12 +129,12 @@ public class DiskController : MonoBehaviour
 
     void Update()
     {
-        if(maxBounces != 0 && m_countedBounces >= maxBounces)
+        if (maxBounces != 0 && m_countedBounces >= maxBounces)
         {
             Reset();
         }
 
-        
+
         else if (transform.position != StartPos && Vector3.Distance(StartPos, transform.position) > 1)
         {
             if (m_isStuck == true)
@@ -151,7 +152,7 @@ public class DiskController : MonoBehaviour
                 {
                     rb.velocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
-                    
+
                 }
 
                 _throwTime = 0;
@@ -164,8 +165,8 @@ public class DiskController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if(collision.gameObject.CompareTag("Wall"))
+
+        if (collision.gameObject.CompareTag("Wall"))
         {
             collision.gameObject.GetComponent<WallSystem>().RunFunction(this);
         }
@@ -181,34 +182,32 @@ public class DiskController : MonoBehaviour
         rb.isKinematic = false;
         m_isStuck = false;
     }
- 
+
     public void UnlockConstraints()
     {
-        Rigidbody body = GetComponent<Rigidbody>();
-        body.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.None;
     }
 
     public void LockConstraints()
     {
-        Rigidbody body = GetComponent<Rigidbody>();
-        body.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.None;
 
         Vector3 rot = transform.eulerAngles;
 
         if (rotationConstraints.x == true)
         {
-            body.constraints |= RigidbodyConstraints.FreezeRotationX;
+            rb.constraints |= RigidbodyConstraints.FreezeRotationX;
             rot.x = 0;
         }
         if (rotationConstraints.y == true)
         {
-            body.constraints |= RigidbodyConstraints.FreezeRotationY;
+            rb.constraints |= RigidbodyConstraints.FreezeRotationY;
             rot.y = 0;
         }
         if (rotationConstraints.z == true)
         {
-            body.constraints |= RigidbodyConstraints.FreezeRotationZ;
-           rot.z = 0;
+            rb.constraints |= RigidbodyConstraints.FreezeRotationZ;
+            rot.z = 0;
         }
 
         transform.eulerAngles = rot;
