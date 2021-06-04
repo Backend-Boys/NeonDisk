@@ -1480,11 +1480,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &83102973
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2513,11 +2513,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &159449362
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2626,11 +2626,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &161214601
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2882,11 +2882,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &177675965
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3334,11 +3334,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &253235631
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3939,11 +3939,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &297037075
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5324,11 +5324,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &402438603
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9701,9 +9701,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 910826460}
+  - component: {fileID: 910826461}
   m_Layer: 0
   m_Name: enemy_bodyshatter (2)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9735,6 +9736,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910826461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910826459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd62f5d4eff89514b90bc6d26f796fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data:
+    breakable: 1
+    body:
+    - {fileID: 2118401336}
+    - {fileID: 177675964}
+    - {fileID: 1284466128}
+    - {fileID: 1424317758}
+    - {fileID: 402438602}
+    - {fileID: 159449361}
+    - {fileID: 161214600}
+    - {fileID: 297037074}
+    - {fileID: 83102972}
+    - {fileID: 2079872710}
+    - {fileID: 253235630}
+    - {fileID: 942571472}
+    Type: 2
 --- !u!1 &914874130
 GameObject:
   m_ObjectHideFlags: 0
@@ -9879,11 +9908,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &942571473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14167,11 +14196,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &1284466129
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15594,11 +15623,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &1424317759
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19801,10 +19830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68202015dafb4fe40a85bc5c72db877c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: {fileID: 910826461}
   velocityFrames: []
   angularVelocity: []
   respawnUsingStartPos: 1
-  respawnTransform: {fileID: 0}
+  respawnTransform: {fileID: 544043995}
   rotationConstraints:
     x: 1
     y: 0
@@ -21863,11 +21893,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &2079872711
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22297,11 +22327,11 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!64 &2118401337
 MeshCollider:
   m_ObjectHideFlags: 0
