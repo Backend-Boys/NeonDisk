@@ -20,6 +20,13 @@ public class DiskController : MonoBehaviour
         Debug.Log("todo : add link to local html file that shows how to use this module");
     }
 
+    private Vector3 centreOfMass;
+    [Header("Number of frames to track flick")]
+    [SerializeField]
+    public Vector3[] velocityFrames;
+    public Vector3[] angularVelocity;
+    private int frameStep = 0;
+
     private Rigidbody rb = null;
     private float _throwTime = 0;
     private bool m_isStuck = false;
@@ -95,14 +102,14 @@ public class DiskController : MonoBehaviour
     }
 
     [SerializeField]
-    [Tooltip("Curve Smoothing for 'Cork-Screw effect'")]
-    [Range(0, 10)]
+    [Tooltip("Curve Amount")]
+    [Range(0, 1)]
     float curveSmoothing;
 
     /// <summary> 
     /// Sets the smoothing amount on the disks curve rotation
     /// </summary>
-    public float CurveSmoothing
+    public float CurveAmount
     {
         get => curveSmoothing;
         set => curveSmoothing = value;
@@ -117,6 +124,8 @@ public class DiskController : MonoBehaviour
         m_countedBounces = 0;
         this.transform.position = StartPos;
         rb.velocity = Vector3.zero;
+        
+        rb.angularVelocity = Vector3.zero;
         m_isStuck = false;
     }
 
@@ -124,17 +133,94 @@ public class DiskController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        rb.useGravity = false;
         StartPos = transform.position;
+        centreOfMass = rb.centerOfMass;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        TimerCheck();
+        
+        VelocityUpdate();
+        
+        // Calculate the disk curve amount
+        Vector3 sideDir = Vector3.Cross(transform.up, rb.velocity).normalized;
+        rb.AddForce(sideDir * curveSmoothing);
+
+    }
+
+    void VelocityUpdate()
+    {
+        if (velocityFrames != null)
+        {
+            frameStep++;
+            if (frameStep >= velocityFrames.Length)
+            {   
+                frameStep =0;
+            }
+
+            velocityFrames[frameStep] = rb.velocity;
+            angularVelocity[frameStep] = rb.angularVelocity;
+        }
+    }
+
+    void AddVelocityHistory()
+    {
+        if (velocityFrames !=null)
+        {
+            // Get the average vector from last 5 frames
+            Vector3 velocityAverage = GetVectorAverage(velocityFrames);
+            if (velocityAverage != null)
+            {
+                // if our average isn't 0, apply it to the rigidbody
+                rb.velocity = velocityAverage;
+            }
+
+            // do the same for angular velocity
+            Vector3 angularVelocityAverage = GetVectorAverage(angularVelocity);
+            if (angularVelocityAverage != null)
+            {
+                // if our average isn't 0, apply it to the rigidbody
+                rb.angularVelocity = angularVelocityAverage;
+            }
+        }
+    }
+
+    void ResetVelocityHistory()
+    {
+        // reset the current frame step to 0
+        frameStep = 0;
+        // prevent nulls
+        if (velocityFrames != null && velocityFrames.Length > 0)
+        {
+            // reset the frame arrays by reinstanitating
+            velocityFrames = new Vector3[velocityFrames.Length];
+            angularVelocity = new Vector3[angularVelocity.Length];
+        }
+    }
+
+    Vector3 GetVectorAverage(Vector3[] frames)
+    {
+
+        Vector3 average = Vector3.zero;
+        for (int i = 0; i < frames.Length; i++)
+        {
+            average+=frames[i];
+        }
+
+        average = average/frames.Length;
+
+        return average;
+    }
+
+    void TimerCheck()
+    {
+
         if (maxBounces != 0 && m_countedBounces >= maxBounces)
         {
             Reset();
         }
-
-
         else if (transform.position != StartPos && Vector3.Distance(StartPos, transform.position) > 1)
         {
             if (m_isStuck == true)
@@ -161,6 +247,7 @@ public class DiskController : MonoBehaviour
         }
         else if (_throwTime > 0)
             _throwTime = 0;
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -186,30 +273,40 @@ public class DiskController : MonoBehaviour
     public void UnlockConstraints()
     {
         rb.constraints = RigidbodyConstraints.None;
+        spinmesh s = GetComponentInChildren<spinmesh>();
+        rb.velocity = Vector3.zero;
+        s.spinning = false;
+        
+
     }
 
     public void LockConstraints()
     {
-        rb.constraints = RigidbodyConstraints.None;
 
-        Vector3 rot = transform.eulerAngles;
+        AddVelocityHistory();
+        ResetVelocityHistory();
+
+        spinmesh s = GetComponentInChildren<spinmesh>();
+        s.spinning = true;
+
+        rb.constraints = RigidbodyConstraints.None;
 
         if (rotationConstraints.x == true)
         {
             rb.constraints |= RigidbodyConstraints.FreezeRotationX;
-            rot.x = 0;
+           
         }
         if (rotationConstraints.y == true)
         {
             rb.constraints |= RigidbodyConstraints.FreezeRotationY;
-            rot.y = 0;
+            
         }
         if (rotationConstraints.z == true)
         {
             rb.constraints |= RigidbodyConstraints.FreezeRotationZ;
-            rot.z = 0;
+           
         }
 
-        transform.eulerAngles = rot;
+        
     }
 }
