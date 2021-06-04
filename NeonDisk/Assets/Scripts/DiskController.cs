@@ -20,6 +20,9 @@ public class DiskController : MonoBehaviour
         Debug.Log("todo : add link to local html file that shows how to use this module");
     }
 
+
+    public NPC test;
+
     private Vector3 centreOfMass;
     [Header("Number of frames to track flick")]
     [SerializeField]
@@ -131,6 +134,12 @@ public class DiskController : MonoBehaviour
         m_isStuck = false;
     }
 
+    private void DebugTest()
+    {
+       
+         test.RunFunction(this);
+        
+    }
 
     void Start()
     {
@@ -142,6 +151,7 @@ public class DiskController : MonoBehaviour
 
     void FixedUpdate()
     {
+        DebugTest();
         TimerCheck();
         
         VelocityUpdate();

@@ -6,6 +6,16 @@ public class NPC : MonoBehaviour
 {
     // Start is called before the first frame update
     [System.Serializable]
+
+    public struct npcRigidBody
+    {
+        public bool breakable;
+        public Rigidbody[] body;
+        [Header("NPC Type")]
+        public npcType Type;
+    }
+
+    [System.Serializable]
     public enum npcType
     {
         enemy,
@@ -13,17 +23,24 @@ public class NPC : MonoBehaviour
         solider
     };
 
-    [Header("NPC Type")]
-    public npcType Type;
-
+    
+    public npcRigidBody Data;
     // Update is called once per frame
     public void RunFunction(DiskController diskController)
     {
-        switch (Type)
+        switch (Data.Type)
         {
             case npcType.enemy:
             {
-                this.gameObject.SetActive(false);
+                
+                if (Data.breakable)
+                {
+                    foreach(var body in Data.body)
+                    {
+                        var rb = body.GetComponent<Rigidbody>();
+                        rb.useGravity = true;
+                    }
+                }
                 break;
             }
             case npcType.civilian:
