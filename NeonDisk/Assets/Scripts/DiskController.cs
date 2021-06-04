@@ -115,6 +115,8 @@ public class DiskController : MonoBehaviour
         set => curveSmoothing = value;
     }
 
+    public bool velocityAffectsCurve = false;
+
     [SerializeField]
     [Tooltip("Amount of times the disk can bounce off other objects | 0 = infinite bounces")]
     int maxBounces = 0;
@@ -144,10 +146,19 @@ public class DiskController : MonoBehaviour
         
         VelocityUpdate();
         
-        // Calculate the disk curve amount
-        Vector3 sideDir = Vector3.Cross(transform.up, rb.velocity).normalized;
-        rb.AddForce(sideDir * curveSmoothing);
+        if (!velocityAffectsCurve)
+        {
+            // Calculate the disk curve amount
+            Vector3 sideDir = Vector3.Cross(transform.up, rb.velocity).normalized;
+            rb.AddForce(sideDir * curveSmoothing);
+        }
+        else
+        {
 
+            Vector3 sideDir = Vector3.Cross(transform.up, rb.velocity).normalized;
+            rb.AddForce(sideDir * curveSmoothing * (rb.velocity.magnitude * 10));
+
+        }
     }
 
     void VelocityUpdate()
@@ -270,6 +281,7 @@ public class DiskController : MonoBehaviour
         m_isStuck = false;
     }
 
+    // On Grab Enter -----
     public void UnlockConstraints()
     {
         rb.constraints = RigidbodyConstraints.None;
@@ -280,12 +292,15 @@ public class DiskController : MonoBehaviour
 
     }
 
+
+    // On Grab Exit -----
     public void LockConstraints()
     {
 
         AddVelocityHistory();
         ResetVelocityHistory();
 
+       
         spinmesh s = GetComponentInChildren<spinmesh>();
         s.spinning = true;
 
