@@ -52,6 +52,14 @@ namespace NeonDiskVR.Menus
                 _moving = false;
         }
 
+        public void ResetPosition()
+        {
+            transform.position = _originalPos;
+            gameObject.SetActive(false);
+
+            _moving = false;
+        }
+
         public void Goto()
         {
             _moving = true;
