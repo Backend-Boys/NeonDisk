@@ -65,4 +65,9 @@ public class HandUI : MonoBehaviour
             }
         }
     }
+
+    public void Exit()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
+    }
 }
