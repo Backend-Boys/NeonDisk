@@ -1,13 +1,13 @@
 while (1)
 {	
-	if (`filetest -r "C:/Users/s200475/DOCUME~1/main/NeonDisk/Temp/CommandPipe"`)
+	if (`filetest -r "C:/Users/s200488/DOCUME~1/Git/main/NeonDisk/Temp/CommandPipe"`)
 	{
 		$exportNormals = 0;
 		$exportTangents = 0;
 		$bakeCommand = "";
 	
 		// Parse settings
-		$waitpipe = `fopen "C:/Users/s200475/DOCUME~1/main/NeonDisk/Temp/CommandPipe" "r"`;
+		$waitpipe = `fopen "C:/Users/s200488/DOCUME~1/Git/main/NeonDisk/Temp/CommandPipe" "r"`;
 		$filename = `fgetline $waitpipe`;
 		$fbxFilename = `fgetline $waitpipe`;
 		
@@ -144,9 +144,9 @@ while (1)
 			else
 				print "Could not open Maya file.";
 
-			sysFile -delete "C:/Users/s200475/DOCUME~1/main/NeonDisk/Temp/CommandPipe";
+			sysFile -delete "C:/Users/s200488/DOCUME~1/Git/main/NeonDisk/Temp/CommandPipe";
 
-			$donepipe = `fopen "C:/Users/s200475/DOCUME~1/main/NeonDisk/Temp/SyncPipe" "w"`;
+			$donepipe = `fopen "C:/Users/s200488/DOCUME~1/Git/main/NeonDisk/Temp/SyncPipe" "w"`;
 			fwrite $donepipe "Done";
 			fclose $donepipe;
 			print "Finished maya loading and fbx conversion \n";
