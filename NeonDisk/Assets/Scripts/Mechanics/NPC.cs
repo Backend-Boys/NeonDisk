@@ -37,7 +37,7 @@ public class NPC : MonoBehaviour
                 {
                     foreach(var body in Data.body)
                     {
-                        var rb = body.GetComponent<Rigidbody>();
+                        
                         body.isKinematic = false;
                        
                        
