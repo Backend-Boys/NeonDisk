@@ -48,21 +48,28 @@ public class HandUI : MonoBehaviour
     }
 
     /// <summary>
-    /// Reset the disks positions to their default state. Should add a reset function inside of disk.
+    /// Resets the current level.
     /// </summary>
     public void ResetLevel()
     {
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Disk"))
-        {
-            if (obj.TryGetComponent(out DiskController disk))
-            {
-                obj.transform.position = disk.StartPos;
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
 
-                if (obj.TryGetComponent(out Rigidbody rb))
-                {
-                    rb.velocity = Vector3.zero;
-                }
-            }
-        }
+        //foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Disk"))
+        //{
+        //    if (obj.TryGetComponent(out DiskController disk))
+        //    {
+        //        obj.transform.position = disk.StartPos;
+
+        //        if (obj.TryGetComponent(out Rigidbody rb))
+        //        {
+        //            rb.velocity = Vector3.zero;
+        //        }
+        //    }
+        //}
+    }
+
+    public void Exit()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(0);
     }
 }
