@@ -2,9 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("NeonDisk/NPC Controller")]
 public class NPC : MonoBehaviour
 {
     // Start is called before the first frame update
+    [System.Serializable]
+
+    public struct npcRigidBody
+    {
+        public bool breakable;
+        public Rigidbody[] body;
+        [Header("NPC Type")]
+        public npcType Type;
+    }
+
     [System.Serializable]
     public enum npcType
     {
@@ -13,17 +24,25 @@ public class NPC : MonoBehaviour
         solider
     };
 
-    [Header("NPC Type")]
-    public npcType Type;
-
+    public npcRigidBody Data;
     // Update is called once per frame
     public void RunFunction(DiskController diskController)
     {
-        switch (Type)
+        switch (Data.Type)
         {
             case npcType.enemy:
             {
-                this.gameObject.SetActive(false);
+
+                if (Data.breakable)
+                {
+                    foreach(var body in Data.body)
+                    {
+                        
+                        body.isKinematic = false;
+                       
+                       
+                    }
+                }
                 break;
             }
             case npcType.civilian:
@@ -34,6 +53,6 @@ public class NPC : MonoBehaviour
             {
                 break;
             }
-        }       
+        } 
     }
 }
