@@ -1,6 +1,6 @@
 //Maya ASCII 2020 scene
 //Name: portal.ma
-//Last modified: Thu, Jun 10, 2021 03:47:39 PM
+//Last modified: Thu, Jun 10, 2021 03:50:37 PM
 //Codeset: 1252
 requires maya "2020";
 requires -nodeType "MASH_Waiter" -nodeType "MASH_Distribute" -nodeType "MASH_Repro"
@@ -12,13 +12,13 @@ fileInfo "product" "Maya 2020";
 fileInfo "version" "2020";
 fileInfo "cutIdentifier" "202011110415-b1e20b88e2";
 fileInfo "osv" "Microsoft Windows 10 Technical Preview  (Build 19042)\n";
-fileInfo "UUID" "B2B6C095-49F6-EB8C-6C82-3E9E54016042";
+fileInfo "UUID" "0A140D62-4F10-CF2C-E14E-EEA27ECA62CB";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "D3A83B27-4B8B-92B7-F0CA-15B79EBCB0F5";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -6.1236990804349896 4.2866241654928636 11.196668600600088 ;
-	setAttr ".r" -type "double3" -12.338352722104574 -7946.1999999943027 0 ;
+	setAttr ".t" -type "double3" 0.20005264039677315 2.7739287428655919 5.2455676398331876 ;
+	setAttr ".r" -type "double3" -20.138352721115407 -7910.999999992725 8.0505017392708281e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D5F9955C-4881-5728-EBEF-D99E81B434C7";
 	setAttr -k off ".v" no;
@@ -26,12 +26,12 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.001;
 	setAttr ".fcp" 100;
 	setAttr ".fd" 0.05;
-	setAttr ".coi" 12.756600323848536;
+	setAttr ".coi" 4.9291487705909542;
 	setAttr ".ow" 0.1;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 4.7771564936738287e-05 -1.9073486345888568e-06 ;
+	setAttr ".tp" -type "double3" -475 122.8079719543457 -34.999999284744263 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
