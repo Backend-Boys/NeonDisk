@@ -4523,6 +4523,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthMultiplier
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 952025142239634710, guid: 8855690aa368b7a4aadb7b535eb1bc2e, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 4927695388962516, guid: c6a74181d4000004887343fb87b3c53a, type: 3}
     - target: {fileID: 952025142239634715, guid: 8855690aa368b7a4aadb7b535eb1bc2e, type: 3}
       propertyPath: m_LineWidth
       value: 0.01
@@ -4551,6 +4555,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthMultiplier
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 952025142350989694, guid: 8855690aa368b7a4aadb7b535eb1bc2e, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 4766092344323370, guid: e201a24a09e942042b93390d0444d728, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8855690aa368b7a4aadb7b535eb1bc2e, type: 3}
 --- !u!20 &4248052709932732674 stripped
