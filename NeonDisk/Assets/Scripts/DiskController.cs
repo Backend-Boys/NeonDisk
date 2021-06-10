@@ -137,7 +137,7 @@ public class DiskController : MonoBehaviour
     private void DebugTest()
     {
        
-         test.RunFunction(this);
+         
         
     }
 
@@ -284,6 +284,22 @@ public class DiskController : MonoBehaviour
         }
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            other.gameObject.GetComponent<NPC>().RunFunction(this);
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            other.gameObject.GetComponent<NPC>().RunFunction(this);
+        }
+    }
+    
 
     public void Unstuck()
     {

@@ -38,8 +38,9 @@ public class NPC : MonoBehaviour
                     foreach(var body in Data.body)
                     {
                         var rb = body.GetComponent<Rigidbody>();
-                        rb.isKinematic = false;
-                        rb.useGravity = true;
+                        body.isKinematic = false;
+                       
+                       
                     }
                 }
                 break;
