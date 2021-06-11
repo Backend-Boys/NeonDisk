@@ -8,24 +8,35 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Master
-  m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 84394356fddbda048b5277edd470bd9e, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - MainEmission:
+        m_Texture: {fileID: 2800000, guid: d91a106f150b47f49af57a6a3e6a165c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - MainTexture:
+        m_Texture: {fileID: 2800000, guid: 51afa729c8679044ba10d6211b1d16de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_1646EDD7:
         m_Texture: {fileID: 2800000, guid: 51afa729c8679044ba10d6211b1d16de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_57A0BB5F:
         m_Texture: {fileID: 2800000, guid: 51afa729c8679044ba10d6211b1d16de, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_7C95061E:
+        m_Texture: {fileID: 2800000, guid: aefe93d6731bd614080f1250bef6fe15, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_C69EB180:
@@ -77,12 +88,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - EmissionStrength: 1
+    - MoveStrength: 5
+    - Transparency: 1
     - Vector1_20EA2B88: 0.1
     - Vector1_2EE2CB80: 0.1
     - Vector1_32DC6BBF: 1
     - Vector1_3328A6D8: 0.1
     - Vector1_3DCFE493: 1.87
+    - Vector1_AC5B8FAD: 0.5
+    - Vector1_E2CD58F0: 0
     - Vector1_EAFE54C0: 0
+    - Vector1_EE7B6526: 0.5
     - Vector1_F41E3C0E: 1
     - Vector1_F824A74D: 1.83
     - _AlphaClip: 0
@@ -125,7 +142,9 @@ Material:
     - Color_23C9B10D: {r: 0.04561229, g: 0.14495295, b: 0.38679245, a: 0}
     - Color_A2AAE5B5: {r: 0.1462264, g: 0.75407606, b: 1, a: 0}
     - Color_A78E67D0: {r: 1, g: 0, b: 0.97866964, a: 1}
+    - MoveDirection: {r: 0, g: 1, b: 0, a: 0}
     - Vector2_26EDDA94: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - Vector2_3AB8E296: {r: 10, g: 1, b: 0, a: 0}
     - Vector2_BF3FC4E0: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_C848BFFB: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
