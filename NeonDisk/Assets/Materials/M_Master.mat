@@ -8,13 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Master
-  m_Shader: {fileID: -6465566751694194690, guid: 922e1f47bab29d544811f00fcd85f5d8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -80,10 +81,10 @@ Material:
     - Vector1_2EE2CB80: 0.1
     - Vector1_32DC6BBF: 1
     - Vector1_3328A6D8: 0.1
-    - Vector1_3DCFE493: 0.61
+    - Vector1_3DCFE493: 1.87
     - Vector1_EAFE54C0: 0
     - Vector1_F41E3C0E: 1
-    - Vector1_F824A74D: -0.68
+    - Vector1_F824A74D: 1.83
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
