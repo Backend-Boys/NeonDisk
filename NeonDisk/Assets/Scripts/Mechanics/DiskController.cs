@@ -250,7 +250,7 @@ public class DiskController : MonoBehaviour
             }
             if (_throwTime == 0)
             {
-                _throwTime = Time.realtimeSinceStartup + 10;
+                _throwTime = Time.realtimeSinceStartup + 100;
             }
 
             if (_throwTime < Time.realtimeSinceStartup)
