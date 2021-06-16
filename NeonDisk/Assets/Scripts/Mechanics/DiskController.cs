@@ -271,14 +271,6 @@ public class DiskController : MonoBehaviour
 
     }
 
-    public void ApplyOffset()
-    {
-        float sped = rb.velocity.magnitude;
-        Vector3 dir = (rb.velocity.normalized - (transform.up * 0.5f)).normalized;
-
-        rb.velocity = dir * sped;
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
