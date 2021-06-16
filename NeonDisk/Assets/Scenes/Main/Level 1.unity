@@ -8938,6 +8938,46 @@ PrefabInstance:
       propertyPath: m_Range
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.14616011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298431395937717344, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
+      propertyPath: m_Parameters.alignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5704900875760759556, guid: b29fe8b38bfecbf49a1b5e2400187771, type: 3}
       propertyPath: m_Material
       value: 
