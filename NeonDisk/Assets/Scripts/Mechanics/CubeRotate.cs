@@ -4,6 +4,8 @@ using UnityEngine;
 [SelectionBase]
 public class CubeRotate : MonoBehaviour
 {
+    public float mult = 3;
+
     private Transform _transform;
     // Start is called before the first frame update
     void Start()
@@ -16,11 +18,11 @@ public class CubeRotate : MonoBehaviour
     {
         if (gameObject.CompareTag("NPC"))
         {
-            _transform.Rotate(0.1f,0.01f,0.1f, Space.World);
+            _transform.Rotate(0.1f * mult, 0.01f * mult, 0.1f * mult, Space.World);
         }
         else
         {
-            _transform.Rotate(0.01f,0.01f,0.01f, Space.World);
+            _transform.Rotate(0.01f * mult, 0.01f * mult, 0.01f * mult, Space.World);
         }
     }
 }

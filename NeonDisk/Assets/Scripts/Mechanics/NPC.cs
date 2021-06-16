@@ -39,9 +39,11 @@ public class NPC : MonoBehaviour
                     {
                         
                         body.isKinematic = false;
-                       
+                        body.transform.parent = null;
                        
                     }
+
+                    Destroy(gameObject); 
                 }
                 break;
             }
