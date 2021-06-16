@@ -250,7 +250,7 @@ public class DiskController : MonoBehaviour
             }
             if (_throwTime == 0)
             {
-                _throwTime = Time.realtimeSinceStartup + 10;
+                _throwTime = Time.realtimeSinceStartup + 100;
             }
 
             if (_throwTime < Time.realtimeSinceStartup)
@@ -273,10 +273,48 @@ public class DiskController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.CompareTag("Wall"))
         {
             collision.gameObject.GetComponent<WallSystem>().RunFunction(this);
+
+            // Dogshit aimbot :)
+            //float sped = rb.velocity.magnitude;
+            //Vector3 dir = rb.velocity.normalized;
+
+            //Vector3 enemyPos = Vector3.zero;
+
+            //GameObject[] ar = GameObject.FindGameObjectsWithTag("NPC");
+            //if (ar.Length < 1)
+            //{
+            //    GameObject e = GameObject.FindGameObjectWithTag("Goal");
+            //    enemyPos = e.transform.GetComponent<Renderer>().bounds.center;
+            //}
+            //else
+            //{
+            //    float prevDistance = 1000;
+
+            //    foreach (GameObject e in GameObject.FindGameObjectsWithTag("NPC"))
+            //    {
+            //        // HAHHAHAHHAH KILL ME PLEASE
+            //        Vector3 ePos = e.transform.GetChild(0).GetComponent<Renderer>().bounds.center;
+
+            //        float dist = Vector3.Distance(transform.position, ePos);
+
+            //        if (dist < prevDistance)
+            //        {
+            //            prevDistance = dist;
+            //            enemyPos = ePos;
+            //        }
+            //    }
+            //}
+
+            //Vector3 goal = (enemyPos - transform.position).normalized;
+            //Vector3 lerp = Vector3.Lerp(dir, goal, 0.5f);
+            ////lerp.y = dir.y;
+
+            //rb.velocity = lerp * sped;
+            //
+
         }
         if (collision.gameObject.CompareTag("NPC"))
         {
