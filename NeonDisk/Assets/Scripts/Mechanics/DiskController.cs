@@ -22,6 +22,9 @@ public class DiskController : MonoBehaviour
 
 
     public NPC test;
+    [Header("Sounds")]
+    public AudioSource hitSound;
+    public AudioSource killSound;
 
     private Vector3 centreOfMass;
     [Header("Number of frames to track flick")]
@@ -273,6 +276,9 @@ public class DiskController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        hitSound.transform.position = collision.contacts[0].point;
+        hitSound.Play();
+
         if (collision.gameObject.CompareTag("Wall"))
         {
             collision.gameObject.GetComponent<WallSystem>().RunFunction(this);
@@ -327,6 +333,9 @@ public class DiskController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("NPC"))
         {
+            killSound.transform.position = other.gameObject.transform.position;
+            killSound.Play();
+
             other.gameObject.GetComponent<NPC>().RunFunction(this);
         }
     }

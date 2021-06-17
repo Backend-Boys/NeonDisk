@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class HandAnimator : MonoBehaviour
 {
     public InputActionReference point;
+    public bool hasItem = false;
 
     private ActionBasedController _controller;
     private Animator _handAnimator;
@@ -17,6 +18,11 @@ public class HandAnimator : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<ActionBasedController>();
+    }
+
+    public void IsHolding(bool holding)
+    {
+        hasItem = holding;
     }
 
     void LateUpdate()
@@ -42,6 +48,7 @@ public class HandAnimator : MonoBehaviour
                 _handAnimator.SetBool("Point", false);
             }
 
+            _handAnimator.SetBool("HasDisk", hasItem);
         }
         else
             _handAnimator = _controller.modelTransform.GetComponentInChildren<Animator>();
