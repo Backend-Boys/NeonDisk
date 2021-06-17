@@ -40,8 +40,10 @@ public class NPC : MonoBehaviour
                         
                         body.isKinematic = false;
                         body.transform.parent = null;
-                       
+                        body.AddExplosionForce(0.5f, diskController.transform.position, 1);
                     }
+
+                        Scoring.main.AddPoints();
 
                     Destroy(gameObject); 
                 }

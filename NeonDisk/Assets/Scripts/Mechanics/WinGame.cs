@@ -7,6 +7,7 @@ public class WinGame : MonoBehaviour
     public AudioSource winSound;
     public bool win = false;
     public GameObject menu;
+    public UnityEngine.UI.Text text;
 
     void Update()
     {
@@ -23,6 +24,14 @@ public class WinGame : MonoBehaviour
     {
         win = true;
         menu.SetActive(true);
+
+        //Scoring.main.AddPoints();
+        Scoring.main.Goal();
+
+        text.text = $"Score: {Scoring.main.playerScore} / {Scoring.main.maxScore}";
+        //
+
+        Destroy(other.gameObject);
         //winSound.Play();
     }
 }
