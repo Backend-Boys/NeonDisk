@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d966e545782245428272931fe95071f, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2d966e545782245428272931fe95071f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -710,7 +710,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 96b71a34de6c6de458ed3107e06e933a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3b86b05653f5dd84784b8973493d2af3, type: 2}
+      objectReference: {fileID: 2100000, guid: 291709c277ef4874f8cb1afabea8515c, type: 2}
     - target: {fileID: 919132149155446097, guid: 96b71a34de6c6de458ed3107e06e933a, type: 3}
       propertyPath: m_Name
       value: SM_Landscape
