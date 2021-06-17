@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Disk
-  - Bouncabble
+  - Wall
+  - NPC
+  - Goal
   layers:
   - Default
   - TransparentFX
