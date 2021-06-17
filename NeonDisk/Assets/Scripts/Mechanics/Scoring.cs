@@ -22,7 +22,7 @@ public class Scoring : MonoBehaviour
             maxScore += baseEnemyValue;
             //maxScore += Enemy.GetComponent<NPC>().value;
         }
-        portalValue = (int)(maxScore * (1 + portalPercentValue));
+        portalValue = (int)(maxScore * (portalPercentValue));
         maxScore += portalValue;
     }
     public void AddPoints()
