@@ -135,6 +135,8 @@ public class DiskController : MonoBehaviour
         
         rb.angularVelocity = Vector3.zero;
         m_isStuck = false;
+
+        Scoring.main.AddThrow();
     }
 
     private void DebugTest()

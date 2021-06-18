@@ -17,6 +17,7 @@ public class Scoring : MonoBehaviour
     public int portalValue = 100;
     [HideInInspector] public int playerScore = 0;
     [HideInInspector] public int playerPercentage;
+    [HideInInspector] public int throws = 0;
 
     void Start()
     {
@@ -33,9 +34,16 @@ public class Scoring : MonoBehaviour
         playerScore += baseEnemyValue;
     }
 
+    public void AddThrow()
+    {
+        throws += 1;
+    }
+
     public void Goal()
     {
         playerScore += portalValue;
+        playerScore /= throws;
+
         CalculatePercentage();
     }
 

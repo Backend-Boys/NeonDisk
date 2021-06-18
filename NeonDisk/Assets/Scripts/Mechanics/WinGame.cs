@@ -9,11 +9,18 @@ public class WinGame : MonoBehaviour
     public GameObject menu;
     public UnityEngine.UI.Text text;
 
+    private MeshRenderer[] meshRenders;
+
+    private void Awake()
+    {
+        meshRenders = (MeshRenderer[])GameObject.FindObjectsOfType(typeof(MeshRenderer));
+    }
+
     void Update()
     {
         if (win)
         {
-            foreach (MeshRenderer obj in GameObject.FindObjectsOfType(typeof(MeshRenderer)))
+            foreach (MeshRenderer obj in meshRenders)
             {
                 obj.material.SetFloat("EmissionStrength", Mathf.Lerp(obj.material.GetFloat("EmissionStrength"), 0, Time.deltaTime));
             }
