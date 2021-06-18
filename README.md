@@ -8,17 +8,12 @@ The Backend Boys (VR Team 1):
 |Programmer|[Duncan Sykes](https://www.linkedin.com/in/duncan-sykes/)|
 |Programmer|[Ruben Antao](https://www.linkedin.com/in/rubenantao/)|
 |Designer|[Timothy Hinshelwood](https://www.linkedin.com/in/timothy-hinshelwood-b4909a206/)|
-|Designer|[Licoln Luu](https://www.linkedin.com/in/lincoln-luu-5922a9201/)|
+|Designer|[Lincoln Luu](https://www.linkedin.com/in/lincoln-luu-5922a9201/)|
 |Designer|[Preston Minuto](https://www.linkedin.com/in/preston-minuto-a23334207/)|
+|Artist|[Alexander O'Dea](https://www.linkedin.com/in/alexander-o-dea-6000631a7/)|
+|Artist|[Connor O'reilly](https://www.linkedin.com/in/connor-o-reilly-1581a31b1/)|
+|Artist|[Amora Sorbello](https://www.linkedin.com/in/amorasorbello/)|
+|Artist|[Jacques Harries]()|
 
 ## What is Neon Disk VR?
 Neon Disk VR is a simple puzzle game where you throw a tron themed discus at targets in virtual reality in order to gain points whilst also trying to get the disk into the goal.
-
-## Programming Goal
-
- 1. Get everything under correct namespaces.
- 2. Reduce unneeded **using** to reduce build time.
- 3. Refactor all code into proper naming conventions with lots of comments/summaries.
- 4. Proper serialization and tool tipping.
- 5. Ordering all folders into scene based scenarios so we do not mix up objects.
-
