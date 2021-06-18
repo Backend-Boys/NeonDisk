@@ -3960,6 +3960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 738807688}
     m_Modifications:
+    - target: {fileID: 543450653232941951, guid: c92e4502b3007444581e46350c132b66, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1951235901550637299, guid: c92e4502b3007444581e46350c132b66, type: 3}
       propertyPath: Data.body.Array.size
       value: 11
@@ -7975,6 +7979,10 @@ PrefabInstance:
       propertyPath: Data.body.Array.data[16]
       value: 
       objectReference: {fileID: 360483907}
+    - target: {fileID: 543450651719336330, guid: 8e55bc333c3ad9c41895640ecd700e45, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1386654089946980750, guid: 8e55bc333c3ad9c41895640ecd700e45, type: 3}
       propertyPath: m_Name
       value: ShieldEnemy
@@ -8398,6 +8406,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 738807688}
     m_Modifications:
+    - target: {fileID: 543450653232941951, guid: c92e4502b3007444581e46350c132b66, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1951235901550637299, guid: c92e4502b3007444581e46350c132b66, type: 3}
       propertyPath: Data.body.Array.size
       value: 11
@@ -9082,6 +9094,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 738807688}
     m_Modifications:
+    - target: {fileID: 543450652622774258, guid: 297502f3584c26c4986b7b2e31747c62, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2227116849854076052, guid: 297502f3584c26c4986b7b2e31747c62, type: 3}
       propertyPath: m_IsActive
       value: 0
