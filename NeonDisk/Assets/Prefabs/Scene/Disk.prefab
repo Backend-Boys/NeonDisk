@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
+  - {fileID: 5704900875760759556}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_CustomReticle: {fileID: 0}
   m_AttachTransform: {fileID: 0}
   m_AttachEaseInTime: 0.15
-  m_MovementType: 0
+  m_MovementType: 2
   m_TrackPosition: 1
   m_SmoothPosition: 0
   m_SmoothPositionAmount: 5
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
   m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingDuration: 0.5
   m_ThrowSmoothingCurve:
     serializedVersion: 2
     m_Curve:
@@ -210,7 +210,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 5
+  m_ThrowVelocityScale: 7.5
   m_ThrowAngularVelocityScale: 8
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
@@ -227,6 +227,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   test: {fileID: 0}
+  hitSound: {fileID: 0}
+  killSound: {fileID: 0}
   velocityFrames:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

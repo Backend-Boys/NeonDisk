@@ -20,11 +20,15 @@ public class WinGame : MonoBehaviour
     public GameObject menu;
     public UnityEngine.UI.Text text;
 
+    public MeshRenderer thisRender;
+
     private MeshRenderer[] meshRenders;
 
     private void Awake()
     {
         meshRenders = (MeshRenderer[])GameObject.FindObjectsOfType(typeof(MeshRenderer));
+
+        thisRender.material.SetFloat("EmissionStrength", 0);
     }
 
     void Update()
@@ -36,20 +40,27 @@ public class WinGame : MonoBehaviour
                 obj.material.SetFloat("EmissionStrength", Mathf.Lerp(obj.material.GetFloat("EmissionStrength"), 0, Time.deltaTime));
             }
         }
+        else if (Scoring.main.Won)
+        {
+            thisRender.material.SetFloat("EmissionStrength", 1);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        win = true;
-        menu.SetActive(true);
+        if (Scoring.main.Won)
+        {
+            win = true;
+            menu.SetActive(true);
 
-        //Scoring.main.AddPoints();
-        Scoring.main.Goal();
+            //Scoring.main.AddPoints();
+            Scoring.main.Goal();
 
-        text.text = $"Score: {Scoring.main.playerScore} / {Scoring.main.maxScore}";
-        //
+            text.text = $"Score: {Scoring.main.playerScore} / {Scoring.main.maxScore}";
+            //
 
-        Destroy(other.gameObject);
-        //winSound.Play();
+            Destroy(other.gameObject);
+            //winSound.Play();
+        }
     }
 }

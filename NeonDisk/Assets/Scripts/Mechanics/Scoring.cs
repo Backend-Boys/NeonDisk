@@ -26,6 +26,11 @@ public class Scoring : MonoBehaviour
     [HideInInspector] public int playerScore = 0;
     [HideInInspector] public int playerPercentage;
     [HideInInspector] public int throws = 0;
+    [HideInInspector] public int deadEnemies = 0;
+
+    [HideInInspector] public bool Won { 
+        get => (deadEnemies >= enemies);
+    }
 
     void Start()
     {
@@ -39,6 +44,7 @@ public class Scoring : MonoBehaviour
 
     public void AddPoints()
     {
+        deadEnemies += 1;
         playerScore += baseEnemyValue;
     }
 
@@ -50,7 +56,7 @@ public class Scoring : MonoBehaviour
     public void Goal()
     {
         playerScore += portalValue;
-        playerScore /= throws;
+        playerScore *= 1 - ((throws - 1) / 100);
 
         CalculatePercentage();
     }
