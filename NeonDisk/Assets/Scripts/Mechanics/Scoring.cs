@@ -53,12 +53,14 @@ public class Scoring : MonoBehaviour
         throws += 1;
     }
 
-    public void Goal()
+    public int Goal()
     {
         playerScore += portalValue;
         playerScore *= 1 - ((throws - 1) / 100);
 
         CalculatePercentage();
+
+        return playerScore;
     }
 
     void CalculatePercentage()

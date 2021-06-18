@@ -54,9 +54,8 @@ public class WinGame : MonoBehaviour
             menu.SetActive(true);
 
             //Scoring.main.AddPoints();
-            Scoring.main.Goal();
 
-            text.text = $"Score: {Scoring.main.playerScore} / {Scoring.main.maxScore}";
+            text.text = $"Score: {Scoring.main.Goal()} / {Scoring.main.maxScore}";
             //
 
             Destroy(other.gameObject);
