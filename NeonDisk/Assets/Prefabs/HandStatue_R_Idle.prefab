@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1082594005091774494}
   - component: {fileID: 4233911360410062131}
   m_Layer: 0
-  m_Name: HandStatue_R
+  m_Name: HandStatue_R_Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 310173534251264676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_LocalScale: {x: 70, y: 70, z: 70}
   m_Children:
   - {fileID: 1570144145324243745}
   - {fileID: 8364540525610719920}
