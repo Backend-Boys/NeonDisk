@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			HandAnimator.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au)
+* Edit Dates:
+*	First:		04/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Animating the players hands based on action and input information.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;

@@ -1,53 +1,66 @@
-﻿using System.Collections;
+﻿/*
+* File:			Elevator.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au)
+* Edit Dates:
+*	First:		17/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used for loading and making a cool scene transition.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Elevator : MonoBehaviour
+namespace NeonDiskVR.Menus
 {
-    public static string nextScene = "Level 1";
-
-    public AudioSource landSound;
-
-    public Transform player;
-    public Transform leftDoor;
-    public Transform rightDoor;
-
-    private bool openDoors = false;
-
-    void Start()
+    public class Elevator : MonoBehaviour
     {
-        StartCoroutine(Wait(5));
-    }
+        public static string nextScene = "Level 1";
 
-    private IEnumerator Wait(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
+        public AudioSource landSound;
 
-        player.gameObject.SetActive(false);
+        public Transform player;
+        public Transform leftDoor;
+        public Transform rightDoor;
 
-        yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));
+        private bool openDoors = false;
 
-        landSound.Play();
-
-        yield return new WaitForSeconds(landSound.clip.length/2);
-
-        openDoors = true;
-
-        yield return new WaitForSeconds(1.5f);
-
-        SceneManager.UnloadSceneAsync("Elevator");
-
-        yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
-    }
-
-    void Update()
-    {
-        if (openDoors)
+        void Start()
         {
-            leftDoor.position -= leftDoor.right * Time.deltaTime;
-            rightDoor.position += rightDoor.right * Time.deltaTime;
+            StartCoroutine(Wait(5));
+        }
+
+        private IEnumerator Wait(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+
+            player.gameObject.SetActive(false);
+
+            yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));
+
+            landSound.Play();
+
+            yield return new WaitForSeconds(landSound.clip.length / 2);
+
+            openDoors = true;
+
+            yield return new WaitForSeconds(1.5f);
+
+            SceneManager.UnloadSceneAsync("Elevator");
+
+            yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Single);
+        }
+
+        void Update()
+        {
+            if (openDoors)
+            {
+                leftDoor.position -= leftDoor.right * Time.deltaTime;
+                rightDoor.position += rightDoor.right * Time.deltaTime;
+            }
         }
     }
 }

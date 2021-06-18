@@ -1,4 +1,12 @@
-﻿// Ruben
+﻿/*
+* File:			Scoring.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au) & Ruben Antao (s200493@students.aie.edu.au)
+* Edit Dates:
+*	First:		17/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Static scoring system used throughout each level to calculate and manage the players score.
+*/
 
 using System.Collections;
 using System.Collections.Generic;

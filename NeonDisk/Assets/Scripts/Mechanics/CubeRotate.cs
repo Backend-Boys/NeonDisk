@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			CubeRotate.cs
+* Author:		Duncan Sykes (s200490@students.aie.edu.au)
+* Edit Dates:
+*	First:		10/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used to rotate asteroids and other objects on all axis.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [SelectionBase]

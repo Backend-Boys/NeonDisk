@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			RespawnZone.cs
+* Author:		Duncan Sykes (s200490@students.aie.edu.au)
+* Edit Dates:
+*	First:		31/05/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used for respawning the disk on trigger.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;

@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿/*
+* File:			WinGame.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au)
+* Edit Dates:
+*	First:		17/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used for fading out the scene and sending win information after scoring a goal (the trigger).
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

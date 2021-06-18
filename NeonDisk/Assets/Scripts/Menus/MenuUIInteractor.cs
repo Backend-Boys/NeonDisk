@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			MenuUIInteractor.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au)
+* Edit Dates:
+*	First:		08/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Direct menu interaction script used for moving the main menu around nicely.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

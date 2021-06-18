@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			NPC.cs
+* Author:		Duncan Sykes (s200490@students.aie.edu.au)
+* Edit Dates:
+*	First:		3/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Trigger explosions and npc features controller.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

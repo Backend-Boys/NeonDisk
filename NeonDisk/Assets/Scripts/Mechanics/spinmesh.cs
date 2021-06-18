@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			spinmesh.cs
+* Author:		Duncan Sykes (s200490@students.aie.edu.au)
+* Edit Dates:
+*	First:		4/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used to spin the disk.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

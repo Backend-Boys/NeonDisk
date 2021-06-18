@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿/*
+* File:			LoadScene.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au)
+* Edit Dates:
+*	First:		04/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Loading a scene with possibly an elevator.
+*/
+
+using UnityEngine;
 
 namespace NeonDiskVR.Menus
 {

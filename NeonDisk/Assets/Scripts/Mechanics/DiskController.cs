@@ -1,3 +1,13 @@
+/*
+* File:			DiskController.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au) & Duncan Sykes (s200490@students.aie.edu.au)
+* Edit Dates:
+*	First:		31/05/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used for controlling the disk and applying physics to the disk. Made by Duncan, minor edits by Jacob.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

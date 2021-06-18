@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* File:			HandUI.cs
+* Author:		Jacob Cooper (s200503@students.aie.edu.au)
+* Edit Dates:
+*	First:		04/06/2021
+*	Last:		18/06/2021
+* Summary:
+*	Used to render the Hand UI on the left hand.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
