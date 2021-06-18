@@ -29,8 +29,8 @@ namespace NeonDiskVR.Menus
             _originalPos = (returnPosition != null ? returnPosition.position : transform.position);
             _originalTargetPos = desiredPosition.position;
 
-            //if (hideOnReturn)
-            //    ResetPosition();
+            if (hideOnReturn)
+                ResetPosition();
             //Return();
         }
 
